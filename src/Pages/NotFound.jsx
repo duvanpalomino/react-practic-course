@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Index = () => {
+const NotFound = () => {
     return (
         <div className='bg-red-100'>
-            Home
+            NotFound
         </div>
     );
 }
 
-export default Index;
+export default NotFound;

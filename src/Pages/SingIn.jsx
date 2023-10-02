@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Index = () => {
+const SingIn = () => {
     return (
         <div className='bg-red-100'>
-            MyAccount
+            SingIn
         </div>
     );
 }
 
-export default Index;
+export default SingIn;

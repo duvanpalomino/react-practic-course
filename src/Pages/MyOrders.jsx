@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Index = () => {
+const MyOrders = () => {
     return (
         <div className='bg-red-100'>
             MyOrders
@@ -8,4 +8,4 @@ const Index = () => {
     );
 }
 
-export default Index;
+export default MyOrders;
