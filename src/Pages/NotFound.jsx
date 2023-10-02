@@ -1,11 +1,10 @@
 // import React from 'react';
-import Layout from '../container/Layout';
 
 const NotFound = () => {
     return (
-        <Layout>
+        <>
             NotFound
-        </Layout>
+        </>
     );
 }
 

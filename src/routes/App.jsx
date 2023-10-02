@@ -1,5 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import { useRoutes, BrowserRouter } from 'react-router-dom'
+import Layout from '../container/Layout';
 import Home from '../Pages/Home';
 import MyAccount from '../Pages/MyAccount';
 import MyOrder from '../Pages/MyOrders';
@@ -25,8 +26,10 @@ const AppRoutes = () => {
 function App() {  
   return (
     <BrowserRouter >
-      <AppRoutes />
       <Navbar />
+      <Layout>
+        <AppRoutes />
+      </Layout>
     </BrowserRouter>
   )
 }
