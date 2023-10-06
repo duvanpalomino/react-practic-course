@@ -1,6 +1,7 @@
 // import React from 'react'
 import { useContext } from "react";
 import { ShoppingCartContext } from '../context/Context';
+import { PlusIcon } from '@heroicons/react/24/solid'
 
 const Card = (data) => {
 
@@ -18,10 +19,7 @@ const Card = (data) => {
                 <button 
                     className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
                     onClick={() => context.setCount(context.count + 1)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
-                    </svg>
-
+                    <PlusIcon />
                 </button>
             </figure>
             <p className='flex justify-between'>
