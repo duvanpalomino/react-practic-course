@@ -10,13 +10,16 @@ export const ShoppingCartProvider = ({ children }) => {
         children: PropTypes.node.isRequired,
     };
 
+    // Shopping Cart Increment quantity
     const [count, setCount] = useState(0);
-    const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
 
+    // Product Detail Open/Close
+    const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
     const openProductDetail = () => setIsProductDetailOpen(true);
-    
     const closeProductDetail = () => setIsProductDetailOpen(false);
 
+    // Product Detail Show Product 
+    const [productToShow, setProductToShow] = useState({});
 
     return (
         <ShoppingCartContext.Provider value={{
@@ -25,6 +28,8 @@ export const ShoppingCartProvider = ({ children }) => {
             openProductDetail,
             closeProductDetail,
             isProductDetailOpen,
+            productToShow,
+            setProductToShow,
         }}>
             { children }
         </ShoppingCartContext.Provider>
