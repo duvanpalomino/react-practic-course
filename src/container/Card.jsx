@@ -57,7 +57,7 @@ const Card = (data) => {
                 {renderIcon(data.data.id)}
             </figure>
             <p className='flex justify-between'>
-                <span className='text-sm font-light'>
+                <span className='text-sm font-light line-clamp-1 mt-1'>
                     {data.data.title}
                 </span>
                 <span className='text-lg font-medium'>

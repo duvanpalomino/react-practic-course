@@ -19,7 +19,7 @@ const OrderCard = props => {
                     <img className='w-full h-full rounded-lg object-fill' 
                         src={imageURL} alt={title} />
                 </figure>
-                <p className='text-sm font-light'>
+                <p className='text-sm font-light line-clamp-1'>
                     {title}
                 </p>
             </div>
