@@ -19,14 +19,14 @@ const Card = (data) => {
         context.openCheckOutSideMenu();
     };
 
-    const renderIcon = () => {
+    const renderIcon = (id) => {
 
-        const isInCart = context.cartProducts.filter(product => product.id === data.data.id).length > 0;
+        const isInCart = context.cartProducts.filter(product => product.id === id).length > 0;
 
         if(isInCart) {
             return (
                 <button 
-                    className='absolute top-0 right-0 flex justify-center items-center bg-black text-white0 w-6 h-6 rounded-full m-2 p-1'
+                    className='absolute top-0 right-0 flex justify-center items-center bg-black text-white w-6 h-6 rounded-full m-2 p-1'
                 >
                     <CheckIcon />
                 </button>

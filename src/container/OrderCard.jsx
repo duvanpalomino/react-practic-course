@@ -1,15 +1,15 @@
 // import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { XCircleIcon } from '@heroicons/react/24/solid';
 import '../styles/OrderCard.css';
 
 const OrderCard = props => {
-    const { title, imageURL, price } = props;
+    const { id, title, imageURL, price, handleDelete } = props;
 
-    OrderCard.PropTypes = {
-        title: PropTypes.node.isRequired,
-        imageURL: PropTypes.node.isRequired,
-        price: PropTypes.node.isRequired,
+    OrderCard.propTypes = {
+        title: propTypes.node.isRequired,
+        imageURL: propTypes.node.isRequired,
+        price: propTypes.node.isRequired,
     }
 
     return (
@@ -27,7 +27,9 @@ const OrderCard = props => {
                 <p className='text-lg font-medium'>
                     {price}
                 </p>
-                <XCircleIcon className='h-6 w-6 text-black cursor-pointer'/>
+                <XCircleIcon 
+                    onClick={() => handleDelete(id) }
+                    className='h-6 w-6 text-black cursor-pointer'/>
             </div>
         </div>
     );
