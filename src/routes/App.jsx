@@ -9,6 +9,7 @@ import MyOrders from '../Pages/MyOrders';
 import SingIn from '../Pages/SingIn';
 import NotFound from '../Pages/NotFound';
 import Navbar from '../container/Navbar';
+import CheckOutSideMenu from '../container/CheckOutSideMenu';
 import '../styles/App.css';
 
 const AppRoutes = () => {
@@ -32,6 +33,7 @@ function App() {
         <Layout>
           <AppRoutes />
         </Layout>
+        <CheckOutSideMenu />
       </BrowserRouter>
     </ShoppingCartProvider>
   )

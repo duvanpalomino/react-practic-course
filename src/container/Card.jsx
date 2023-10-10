@@ -1,7 +1,7 @@
 // import React from 'react'
 import { useContext } from "react";
 import { ShoppingCartContext } from '../context/Context';
-import { PlusIcon } from '@heroicons/react/24/solid'
+import { PlusIcon, CheckIcon } from '@heroicons/react/24/solid'
 
 const Card = (data) => {
 
@@ -10,6 +10,36 @@ const Card = (data) => {
     const showProduct = (ProductDetail) => {
         context.openProductDetail()
         context.setProductToShow(ProductDetail)
+    }
+
+    const addProductsToCart = (event, productData) => {
+        event.stopPropagation();
+        context.setCount(context.count + 1)
+        context.setCartProducts([...context.cartProducts, productData])
+        context.openCheckOutSideMenu();
+    };
+
+    const renderIcon = () => {
+
+        const isInCart = context.cartProducts.filter(product => product.id === data.data.id).length > 0;
+
+        if(isInCart) {
+            return (
+                <button 
+                    className='absolute top-0 right-0 flex justify-center items-center bg-black text-white0 w-6 h-6 rounded-full m-2 p-1'
+                >
+                    <CheckIcon />
+                </button>
+            )
+        } else {
+            return (
+                <button 
+                    className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
+                    onClick={(event) => addProductsToCart(event, data.data) }>
+                    <PlusIcon />
+                </button>
+            )
+        }
     }
 
     return (
@@ -24,11 +54,7 @@ const Card = (data) => {
                 <img 
                     className='w-full h-full object-fill rounded-lg'
                     src={data.data.image} alt={data.data.title} />
-                <button 
-                    className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
-                    onClick={() => context.setCount(context.count + 1)}>
-                    <PlusIcon />
-                </button>
+                {renderIcon(data.data.id)}
             </figure>
             <p className='flex justify-between'>
                 <span className='text-sm font-light'>
