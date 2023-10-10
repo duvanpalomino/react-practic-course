@@ -3,3 +3,21 @@
     height: calc(100vh - 68px);
     top: 68px;
 }
+
+/* Webkit */
+.no-scrollbar::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.no-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: grey;
+}
+
+
+
