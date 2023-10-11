@@ -33,7 +33,7 @@ const Navbar = () => {
                         className={({ isActive }) =>
                                 isActive ? activeStyle : undefined
                 }>
-                        Electronics
+                        Clothes
                     </NavLink>
                 </li>
                 <li>
@@ -42,7 +42,7 @@ const Navbar = () => {
                         className={({ isActive }) =>
                                 isActive ? activeStyle : undefined
                 }>
-                        Jewelery
+                        Electronics
                     </NavLink>
                 </li>
                 <li>
@@ -51,7 +51,7 @@ const Navbar = () => {
                         className={({ isActive }) =>
                                 isActive ? activeStyle : undefined
                 }>
-                        Mens-Clothing
+                        Furnitures
                     </NavLink>
                 </li>
                 <li>
@@ -60,7 +60,16 @@ const Navbar = () => {
                         className={({ isActive }) =>
                                 isActive ? activeStyle : undefined
                 }>
-                        Womens-Clothing
+                        Toys
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        to='/womens-clothing'
+                        className={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                }>
+                        Others
                     </NavLink>
                 </li>
             </ul>
