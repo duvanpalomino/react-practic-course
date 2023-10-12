@@ -25,7 +25,7 @@ const ProductDetail = () => {
                 <figure className='px-6'>
                     <img 
                         className='w-full h-40 rounded-lg' 
-                        src={context.productToShow.images} 
+                        src={context.productToShow.image} 
                         alt={context.productToShow.title} 
                     />
                 </figure>

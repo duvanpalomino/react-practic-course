@@ -33,7 +33,7 @@ const Navbar = () => {
                         className={({ isActive }) =>
                                 isActive ? activeStyle : undefined
                 }>
-                        Clothes
+                        Electronics
                     </NavLink>
                 </li>
                 <li>
@@ -42,7 +42,7 @@ const Navbar = () => {
                         className={({ isActive }) =>
                                 isActive ? activeStyle : undefined
                 }>
-                        Electronics
+                        Jewelery
                     </NavLink>
                 </li>
                 <li>
@@ -51,7 +51,7 @@ const Navbar = () => {
                         className={({ isActive }) =>
                                 isActive ? activeStyle : undefined
                 }>
-                        Furnitures
+                        Mens-Clothing
                     </NavLink>
                 </li>
                 <li>
@@ -60,16 +60,7 @@ const Navbar = () => {
                         className={({ isActive }) =>
                                 isActive ? activeStyle : undefined
                 }>
-                        Toys
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink 
-                        to='/womens-clothing'
-                        className={({ isActive }) =>
-                                isActive ? activeStyle : undefined
-                }>
-                        Others
+                        Womens-Clothing
                     </NavLink>
                 </li>
             </ul>
@@ -104,7 +95,10 @@ const Navbar = () => {
                         Sing In
                     </NavLink>
                 </li>
-                <li className='flex justify-between items-center h-6 w-6'>
+                <li 
+                    className='flex justify-between items-center h-6 w-6 cursor-pointer' 
+                    onClick={() => context.openCheckOutSideMenu()}
+                    >
                     <ShoppingCartIcon />{context.count}
                 </li>
             </ul>
