@@ -4,7 +4,7 @@ import { ShoppingCartProvider } from '../context/Context';
 import Layout from '../container/Layout';
 import Home from '../Pages/Home';
 import MyAccount from '../Pages/MyAccount';
-import MyOrder from '../Pages/MyOrders';
+import MyOrder from '../Pages/MyOrder';
 import MyOrders from '../Pages/MyOrders';
 import SingIn from '../Pages/SingIn';
 import NotFound from '../Pages/NotFound';
@@ -18,6 +18,7 @@ const AppRoutes = () => {
       { path: '/my-account', element: <MyAccount />},
       { path: '/my-order', element: <MyOrder />},
       { path: '/my-orders', element: <MyOrders />},
+      { path: '/my-orders/last', element: <MyOrder />},
       { path: '/sing-in', element: <SingIn />},
       { path: '/*', element: <NotFound />},
     ])

@@ -5,6 +5,11 @@ import '../styles/OrderCard.css';
 
 const OrderCard = props => {
     const { id, title, imageURL, price, handleDelete } = props;
+    
+    let renderXMarkIcon;
+    if(handleDelete) {
+        renderXMarkIcon = <XCircleIcon onClick={() => handleDelete(id) }className='h-6 w-6 text-black cursor-pointer'/>
+    }
 
     OrderCard.propTypes = {
         title: propTypes.node.isRequired,
@@ -27,10 +32,9 @@ const OrderCard = props => {
                 <p className='text-lg font-medium'>
                     {price}
                 </p>
-                <XCircleIcon 
-                    onClick={() => handleDelete(id) }
-                    className='h-6 w-6 text-black cursor-pointer'/>
+                {renderXMarkIcon}
             </div>
+            
         </div>
     );
 }
