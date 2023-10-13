@@ -1,7 +1,6 @@
 // import React from 'react';
 import propTypes from 'prop-types';
 import { XCircleIcon } from '@heroicons/react/24/solid';
-import '../styles/OrderCard.css';
 
 const OrderCard = props => {
     const { id, title, imageURL, price, handleDelete } = props;
