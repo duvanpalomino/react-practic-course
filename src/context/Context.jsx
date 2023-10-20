@@ -39,11 +39,11 @@ export const ShoppingCartProvider = ({ children }) => {
 
     // Get product by title
     const [searchByTitle, setSearchByTitle] = useState(null);
-    console.log(searchByTitle);
+    // console.log(searchByTitle);
 
     // Get product by category
     const [searchByCategory, setSearchByCategory] = useState(null);
-    console.log(searchByCategory);
+    // console.log(searchByCategory);
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -59,30 +59,35 @@ export const ShoppingCartProvider = ({ children }) => {
         return items?.filter(item => item.category.toLowerCase().includes(searchByCategory.toLowerCase()) ) 
     }
 
-    const filterBy = (searchType, items, searchByTitle, searchByCategory) => {
-        if(searchType === 'BY_TITLE') {
-            return filteredItemsByTitle(items, searchByTitle)
-        }
-
-        if(searchType === 'BY_CATEGORY') {
-            return filteredItemsByCategory(items, searchByCategory)
-        }
-
-        if(searchType === 'BY_TITLE_AND_CATEGORY') {
-            return filteredItemsByCategory(items, searchByCategory).filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
-        }
-
-        if(!searchType) {
-            return items 
-        }
-    }
 
     useEffect(() => {
+
+        const filterBy = (searchType, items, searchByTitle, searchByCategory) => {
+            if(searchType === 'BY_TITLE') {
+                return filteredItemsByTitle(items, searchByTitle)
+            }
+
+            if(searchType === 'BY_CATEGORY') {
+                return filteredItemsByCategory(items, searchByCategory)
+            }
+
+            if(searchType === 'BY_TITLE_AND_CATEGORY') {
+                return filteredItemsByCategory(items, searchByCategory).filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
+            }
+
+            if(!searchType) {
+                return items 
+            }
+        
+        }
+
         if (searchByTitle && searchByCategory) setFilteredItems(filterBy('BY_TITLE_AND_CATEGORY', items, searchByTitle, searchByCategory));
         if (searchByTitle && !searchByCategory) setFilteredItems(filterBy('BY_TITLE', items, searchByTitle, searchByCategory));
-        if (!searchByTitle && searchByCategory) setFilteredItems(filterBy('BY_CATEGORY', items, searchByCategory, searchByTitle,));
-        if (!searchByTitle && !searchByCategory) setFilteredItems(filterBy(null, items, searchByCategory, searchByTitle,));
-    }, [items, searchByTitle, searchByCategory]); 
+        if (!searchByTitle && searchByCategory) setFilteredItems(filterBy('BY_CATEGORY', items, searchByCategory, searchByTitle));
+        if (!searchByTitle && !searchByCategory) setFilteredItems(filterBy(null, items, searchByCategory, searchByTitle));
+    }, [items, searchByCategory, searchByTitle]);
+
+
 
     // useEffect(() => {
     //     if(searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))

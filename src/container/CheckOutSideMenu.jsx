@@ -30,6 +30,7 @@ const CheckOutSideMenu = () => {
         context.setCartProducts([]);
         context.setCount(0);
         context.closeCheckOutSideMenu();
+        context.setSearchByTitle(null)
     };
 
     return (
