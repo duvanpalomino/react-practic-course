@@ -35,7 +35,7 @@ export const ShoppingCartProvider = ({ children }) => {
     // Get Products 
     const [items, setItems] = useState(null);
     const [filteredItems, setFilteredItems] = useState(null);
-    // console.log(filteredItems)
+    console.log(filteredItems)
 
     // Get product by title
     const [searchByTitle, setSearchByTitle] = useState(null);
@@ -43,7 +43,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
     // Get product by category
     const [searchByCategory, setSearchByCategory] = useState(null);
-    // console.log(searchByCategory);
+    console.log(searchByCategory);
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
